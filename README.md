@@ -1,8 +1,21 @@
 # A28 WP Theme Assistant
 
+## Overview
+
 A reusable coding-agent skill by adhit28 for turning Figma designs into custom WordPress themes, with Codex integration included. Defaults to Timber v2, Twig, and structured ACF fields for new projects; supports native PHP themes and preserves existing stacks.
 
 This is an instruction package for a coding agent, not a WordPress plugin, starter theme, Figma connector, or hosted service. It does not include Timber, ACF Pro, fonts, or design assets.
+
+## Why Use It
+
+Use this skill when a WordPress theme must faithfully implement supplied Figma designs while keeping content editable and respecting the project’s existing theme stack. It provides a workflow for mapping design regions to templates and content fields, preserving WordPress conventions, and verifying the rendered result against available design evidence.
+
+## What It Helps With
+
+- Building responsive custom WordPress pages from Figma frames, exports, screenshots, or a written brief
+- Selecting between Timber/Twig with structured ACF fields and an existing native PHP theme stack
+- Modeling editor-managed content without introducing an unrestricted page builder by default
+- Comparing local rendered pages with design evidence and reporting verification limits
 
 ## Install
 
@@ -10,9 +23,9 @@ Copy the complete `a28-wp-theme-assistant` folder, including its references and 
 
 No other A28 skill is required. For direct Figma inspection, configure an available Figma integration or accessible browser session; design exports also work. Theme execution and verification require the project's compatible PHP/WordPress environment. New Timber projects need Composer dependency support, and ACF-based features need the appropriate ACF edition. Existing project tools are reused.
 
-## Other models and coding agents
+## AI Model and Agent Support
 
-The core instructions are model-independent Markdown. A model reads and follows them; the application running that model determines skill discovery, installation, and access to tools. Changing models does not by itself install the skill or provide Figma access.
+This package declares no model-specific requirement. Its core instructions are model-independent Markdown; the application running a model determines skill discovery, installation, and access to tools. Changing models does not by itself install the skill or provide Figma access.
 
 - **Other models in Codex:** use the same installed skill when it is available in the session. No model-specific rewrite is needed.
 - **Other coding agents:** if the agent supports `SKILL.md` packages, install the complete folder using that agent's documented skill location and invocation method. Preserve the relative `references/` paths. Do not assume Codex's installation path or `$a28-wp-theme-assistant` syntax applies elsewhere.
