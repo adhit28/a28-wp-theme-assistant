@@ -1,0 +1,4 @@
+interface:
+  display_name: "A28 WP Theme Assistant"
+  short_description: "Build Figma-based WordPress themes with Timber and ACF"
+  default_prompt: "Use $a28-wp-theme-assistant to build a faithful, responsive WordPress custom theme from Figma using Timber and ACF, or native PHP templates when requested."
