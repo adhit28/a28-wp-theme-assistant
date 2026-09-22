@@ -44,6 +44,13 @@ Figma is preferred, not mandatory: accept exported designs, screenshots, or a wr
 11. Preserve existing build tools and CSS conventions. Add a build system only when justified; deliver assets using the actual deployment workflow.
 12. Scope work to the requested theme and pages. Theme activation, content imports, production deployment, and Figma edits require authorization covering those actions. Existing explicit or clearly implied authorization counts; do not ask again for routine actions already covered by the task.
 
+13. Establish a source-of-truth lock before implementation: record the design file, page, desktop/mobile frames, revision/date, and any explicitly latest variant. Do not mix assets or measurements from older frames without labeling the exception.
+14. Separate editorial content from presentation assets. Send copy, content imagery, links, repeated items, and data-driven labels through native WordPress/ACF structures; keep logos, decorative patterns, overlays, icons, type scale, spacing, and layout rules in the theme unless the design explicitly makes them editable.
+15. Use an asset contract. Give source assets human-readable semantic names, preserve originals in a non-deployed archive, and commit only referenced web-ready outputs. Validate extensions against file contents, cap dimensions to the largest rendered use, strip unnecessary metadata, use modern formats with an appropriate fallback, and remove unused outputs.
+16. Define a shared layout contract before styling: content max-width, gutters, spacing tokens, typography roles, and the explicit edge-to-edge sections. Reuse those values across sections; document measured exceptions instead of accumulating one-off overrides.
+17. Treat missing editorial data as a modeled state. Never invent URLs, claims, or production copy to fill a visual gap. Preserve intentional geometry with a safe fallback, disabled action, or clearly documented placeholder, and make the ACF/native field contract explicit before wiring it.
+18. Verify the rendered result against the locked source at its supplied desktop and mobile sizes, then test at representative narrow, tablet, and wide widths. Check overflow, image loading, intrinsic/display dimensions, keyboard states, browser/PHP errors, and the absence of stale or unused assets before reporting completion.
+
 ## Workflow
 
 ### 1. Inspect and Frame
@@ -65,6 +72,14 @@ Read the selected rendering reference and ACF reference if applicable. Build sha
 ### 5. Verify Against Figma
 
 Read the verification reference. Render at supplied frame sizes and representative narrow widths; compare typography, geometry, assets, states, and behavior. Correct observed mismatches. Test realistic and missing optional content. Distinguish static checks from runtime/editor checks; never claim design fidelity without visual comparison.
+
+For every visual implementation, finish with these small audits:
+
+- **Source audit:** the inspected frame and revision are recorded, and every visible section has a known source or a stated evidence gap.
+- **Asset audit:** every deployed image/font/vector is referenced, readable, correctly typed, appropriately sized, and loadable; source originals are not mixed into the deployed bundle.
+- **Layout audit:** shared containers and tokens are consistent, edge-to-edge behavior is intentional, and responsive geometry is checked at source plus intermediate widths.
+- **Content audit:** editable fields are separated from theme-owned decoration; missing values and links fail safely without invented data.
+- **Interaction audit:** keyboard focus, menu/tabs/accordion states, disabled or pending actions, and accessible relationships are exercised.
 
 ## Quality Bar
 
